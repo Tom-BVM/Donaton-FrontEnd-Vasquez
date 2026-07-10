@@ -1,10 +1,10 @@
-# Donatón - Frontend Platform 🚀
+# Donatón - Frontend Platform 
 
 Plataforma web moderna y minimalista diseñada para la gestión, recaudación y seguimiento transparente de donaciones monetarias y en especie (ropa, insumos y materiales). Este repositorio corresponde al ecosistema Frontend de la aplicación, construido bajo una arquitectura distribuida basada en microservicios independientes.
 
 ---
 
-## 🛠️ Tecnologías y Herramientas Utilizadas
+## Tecnologías y Herramientas Utilizadas
 
 - **Frontend core:** React.js (Hooks, Context, Renderizado Condicional).
 - **Diseño y UX:** Bootstrap 5 (Estilos responsivos y componentes minimalistas).
@@ -15,7 +15,7 @@ Plataforma web moderna y minimalista diseñada para la gestión, recaudación y 
 
 ---
 
-## 💻 Características Implementadas (UX / UI)
+## Características Implementadas (UX / UI)
 
 - **Auto-Login Eficiente:** Al registrar una cuenta nueva, el sistema inicia la sesión automáticamente guardando los datos de control de forma local, evitando fricciones al usuario.
 - **Flujo de Autenticación Visual:** Reemplazo de textos planos del backend por alertas dinámicas integradas en el formulario (verde para éxito, rojo para errores) con redirección automatizada en 1 segundo.
@@ -25,7 +25,7 @@ Plataforma web moderna y minimalista diseñada para la gestión, recaudación y 
 
 ---
 
-## 🏛️ Vista de Páginas Incluidas
+## Vista de Páginas Incluidas
 
 - `Home.js`: Panel principal de bienvenida y acceso rápido.
 - `Login.js`: Formulario seguro de acceso conectado al microservicio de Auths.
@@ -36,7 +36,7 @@ Plataforma web moderna y minimalista diseñada para la gestión, recaudación y 
 
 ---
 
-## 🚀 Requisitos Previos
+## Requisitos Previos
 
 Antes de levantar el proyecto, asegúrate de tener instalado en tu computadora:
 - [Git](https://git-scm.com)
@@ -44,13 +44,13 @@ Antes de levantar el proyecto, asegúrate de tener instalado en tu computadora:
 
 ---
 
-## 📦 Instalación y Despliegue Express
+## Instalación y Despliegue
 
 Sigue estos pasos en tu terminal para clonar, instalar y levantar la plataforma completa de forma automática utilizando contenedores:
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com
+git clone [https://github.com/Tom-BVM/Donaton-FrontEnd-Vasquez.git]
 cd Donaton-FrontEnd-Vasquez
 ```
 
