@@ -1,35 +1,41 @@
 import axios from "axios";
 
-// URL de los microservicios
-const API_AUTH = "http://localhost:8081/api/auth";
-const API_DONACIONES = "http://localhost:8082/api/donaciones";
-const API_LOGISTICA = "http://localhost:8083/api/logistica";
-const API_NECESIDADES = "http://localhost:8084/api/necesidades";
+const axiosConfig = {
+  withCredentials: true,
+  headers: {
+    "Content-Type": "application/json",
+  }
+};
+
+const apiAuth = axios.create({ baseURL: "http://localhost:8081/api/auth", ...axiosConfig });
+const apiDonaciones = axios.create({ baseURL: "http://localhost:8082/api/donaciones", ...axiosConfig });
+const apiLogistica = axios.create({ baseURL: "http://localhost:8083/api/logistica", ...axiosConfig });
+const apiNecesidades = axios.create({ baseURL: "http://localhost:8084/api/necesidades", ...axiosConfig });
 
 // -------------------- AUTH --------------------
-export const registrarUsuario = (usuario) =>
-  axios.post(`${API_AUTH}/registrar`, usuario);
+export const registrarUsuario = (usuario) => 
+  apiAuth.post("/registrar", usuario);
 
-export const iniciarSesion = (usuario) =>
-  axios.post(`${API_AUTH}/iniciar-sesion`, usuario);
+export const iniciarSesion = (usuario) => 
+  apiAuth.post("/iniciar-sesion", usuario);
 
 // -------------------- DONACIONES --------------------
-export const crearDonacion = (donacion) =>
-  axios.post(API_DONACIONES, donacion);
+export const crearDonacion = (donacion) => 
+  apiDonaciones.post("/", donacion);
 
-export const listarDonaciones = () =>
-  axios.get(API_DONACIONES);
+export const listarDonaciones = () => 
+  apiDonaciones.get("/");
 
 // -------------------- LOGÍSTICA --------------------
-export const crearEnvio = (envio) =>
-  axios.post(`${API_LOGISTICA}/envio`, envio);
+export const crearEnvio = (envio) => 
+  apiLogistica.post("/envio", envio);
 
-export const listarEnvios = () =>
-  axios.get(`${API_LOGISTICA}/envios`);
+export const listarEnvios = () => 
+  apiLogistica.get("/envios");
 
 // -------------------- NECESIDADES --------------------
-export const crearNecesidad = (necesidad) =>
-  axios.post(API_NECESIDADES, necesidad);
+export const crearNecesidad = (necesidad) => 
+  apiNecesidades.post("/", necesidad);
 
-export const listarNecesidades = () =>
-  axios.get(API_NECESIDADES);
+export const listarNecesidades = () => 
+  apiNecesidades.get("/");

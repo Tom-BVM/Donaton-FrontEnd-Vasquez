@@ -13,8 +13,6 @@ function Transparencia() {
           <p className="lead">
             En coherencia con nuestro compromiso, somos auditados a través de un
             riguroso proceso externo realizado por Auditores JL . También trabajamos
-
-            
             junto a Chile Transparente en la implementación de 24 estándares de
             acceso a la información y rendición de cuentas, lo que nos permitió
             obtener el Sello de Transparencia.
@@ -26,8 +24,9 @@ function Transparencia() {
           </p>
         </div>
         <div className="col-md-6 text-center">
+          {/* Corregido a: /IMG/transparencia.png */}
           <img
-            src="/img/transparencia.png"
+            src="/IMG/transparencia.png"
             alt="Compromiso de Transparencia"
             className="img-fluid rounded shadow"
           />
@@ -65,8 +64,9 @@ function Transparencia() {
       {/* Sección de destino de donaciones */}
       <div className="row align-items-center">
         <div className="col-md-6 text-center">
+          {/* Corregido a: /IMG/donaciones.png */}
           <img
-            src="/img/donaciones.png"
+            src="/IMG/donaciones.png"
             alt="Destino de Donaciones"
             className="img-fluid rounded shadow"
           />

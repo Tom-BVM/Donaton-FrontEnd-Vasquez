@@ -39,19 +39,19 @@ function Footer() {
           <h5>Síguenos</h5>
           <ul className="list-unstyled d-flex justify-content-center">
             <li className="me-3">
-              <a href="#"><img src="img/Facebook.png" alt="Facebook" width="30" /></a>
+              <a href="#"><img src="/IMG/Facebook.png" alt="Facebook" width="30" /></a>
             </li>
             <li className="me-3">
-              <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" /></a>
+              <a href="#"><img src="/IMG/instagram.png" alt="Instagram" width="30" /></a>
             </li>
             <li className="me-3">
-              <a href="#"><img src="img/x.png" alt="x" width="30" /></a>
+              <a href="#"><img src="/IMG/x.png" alt="x" width="30" /></a>
+            </li>
+            <li className="me-3">
+              <a href="#"><img src="/IMG/youtube.png" alt="YouTube" width="30" /></a>
             </li>
             <li>
-              <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" /></a>
-            </li>
-            <li className="ms-3">
-                <a href="#"><img src="img/tiktok.png" alt="TikTok" width="30" /></a>
+              <a href="#"><img src="/IMG/tiktok.png" alt="TikTok" width="30" /></a>
             </li>
           </ul>
         </div>

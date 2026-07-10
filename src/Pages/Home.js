@@ -4,26 +4,25 @@ function Home() {
     return (
         <>
             <div>
-
                 {/* Carrusel */}
                 <div id="carruselDonaton" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="img/IncendioDonaton.png" className="d-block w-100" alt="incendios" />
+                            <img src="/IMG/IncendioDonaton.png" className="d-block w-100" alt="incendios" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Llegada rápida a ayudar</h5>
                             </div>
                         </div>
 
                         <div className="carousel-item">
-                            <img src="img/TerremotoDonaton.png" className="d-block w-100" alt="terremotos" />
+                            <img src="/IMG/TerremotoDonaton.png" className="d-block w-100" alt="terremotos" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Reconstrucción a los que perdieron su hogar</h5>
                             </div>
                         </div>
 
                         <div className="carousel-item">
-                            <img src="img/AyudaDonaton.png" className="d-block w-100" alt="ayudas concluidas" />
+                            <img src="/IMG/AyudaDonaton.png" className="d-block w-100" alt="ayudas concluidas" />
                             <div className="carousel-caption d-none d-md-block">
                                 <h5>Impacto real</h5>
                             </div>
@@ -67,7 +66,7 @@ function Home() {
 
                     <div className="col-md-6 col-lg-4 mb-4">
                         <div className="card shadow p-3 h-100">
-                            <img src="img/IncendioValparaisoDonar.jpg" className="card-img-top" alt="Ayuda 1" />
+                            <img src="/IMG/IncendioValparaisoDonar.jpg" className="card-img-top" alt="Ayuda 1" />
                             <div className="card-body text-center">
                                 <p className="card-text">
                                     Apoya en esta donación para estas familias que lo perdió todo en los incendios de Valparaíso.
@@ -98,7 +97,7 @@ function Home() {
 
                     <div className="col-md-6 col-lg-4 mb-4">
                         <div className="card shadow p-3 h-100">
-                            <img src="img/ChileInundacionDonacion.webp" className="card-img-top" alt="Ayuda 2" />
+                            <img src="/IMG/ChileInundacionDonacion.webp" className="card-img-top" alt="Ayuda 2" />
                             <div className="card-body text-center">
                                 <p className="card-text">
                                     Apoya a esta comunidad afectada por inundaciones en el sur de Chile.
@@ -130,38 +129,37 @@ function Home() {
 
                 <div className="row justify-content-center">
                     <div className="col-md-12 col-lg-8">
-                    <div className="card shadow p-3 h-100">
-                        <img src="img/CampamentoDonacion.jpg" className="card-img-top" alt="Ayuda 3" />
-                        <div className="card-body text-center">
-                        <p className="card-text">
-                            Campaña nacional para apoyar a múltiples familias en situación crítica de insalubridad y vivienda.
-                        </p>
+                        <div className="card shadow p-3 h-100">
+                            <img src="/IMG/CampamentoDonacion.jpg" className="card-img-top" alt="Ayuda 3" />
+                            <div className="card-body text-center">
+                                <p className="card-text">
+                                    Campaña nacional para apoyar a múltiples familias en situación crítica de insalubridad y vivienda.
+                                </p>
 
-                        <div className="d-flex justify-content-between mb-2">
-                            <div>
-                            <h6>Llevamos recaudado</h6>
-                            <h4>2.643.090</h4>
-                            </div>
-                            <div className="text-end">
-                            <h6>Meta</h6>
-                            <h4>$20.000.000</h4>
-                            </div>
-                        </div>
+                                <div className="d-flex justify-content-between mb-2">
+                                    <div>
+                                        <h6>Llevamos recaudado</h6>
+                                        <h4>2.643.090</h4>
+                                    </div>
+                                    <div className="text-end">
+                                        <h6>Meta</h6>
+                                        <h4>$20.000.000</h4>
+                                    </div>
+                                </div>
 
-                        <div className="progress mb-3">
-                            <div className="progress-bar progress-bar-striped progress-bar-animated bg-warning" style={{ width: "13%" }}>
-                            13%
+                                <div className="progress mb-3">
+                                    <div className="progress-bar progress-bar-striped progress-bar-animated bg-warning" style={{ width: "13%" }}>
+                                    13%
+                                    </div>
+                                </div>
+                                <div className="d-grid">
+                                    <button className="btn btn-warning">Donar</button>
+                                </div>
                             </div>
                         </div>
-                        <div className="d-grid">
-                            <button className="btn btn-warning">Donar</button>
-                        </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
-
 
             {/* Conoce nuestros proyectos */}
             <div className="container my-5">
@@ -188,7 +186,7 @@ function Home() {
                     <div className="col-md-6">
                         <div className="card shadow h-100 p-3">
                             <h3>Reconstrucción Maule-Biobío</h3>
-                            <p>Iniciativas para levantar comunidades.</p>
+                            <p>Iniciativas para levantar comunidades.</p>   
                             <a href="/reconstruccion" className="btn btn-primary">Ver más</a>
                         </div>
                     </div>

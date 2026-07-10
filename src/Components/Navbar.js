@@ -38,6 +38,9 @@ function Navbar() {
             <li className="nav-item">
               <Link className="nav-link" to="/transparencia">Transparencia</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/seguimiento">Envíos</Link>
+            </li>
 
             {nombreUsuario ? (
               <li className="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">

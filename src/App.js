@@ -5,6 +5,7 @@ import CrearCuenta from "./Pages/CrearCuenta";
 import Login from "./Pages/Login";
 import Transparencia from "./Pages/Transparencia";
 import Donaciones from "./Pages/Donaciones";
+import Seguimientos from "./Pages/Seguimientos";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/transparencia" element={<Transparencia />} />
         <Route path="/donaciones" element={<Donaciones/>}/>
+        <Route path="/seguimiento" element={<Seguimientos/>}/>
       </Routes>
       <Footer />
     </Router>
