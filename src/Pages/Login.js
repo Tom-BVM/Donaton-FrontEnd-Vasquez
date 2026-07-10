@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { iniciarSesion } from "../Services/Api";
 
 function Login() {
   const [form, setForm] = useState({ correo: "", contraseña: "" });
   const [mensaje, setMensaje] = useState("");
+  const [esExitoso, setEsExitoso] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -11,21 +14,40 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMensaje("");
+    setEsExitoso(false);
+
     try {
       const res = await iniciarSesion(form);
 
-      localStorage.setItem("usuarioId", res.data.id || 1);
+      if (res.data === "Inicio de sesión correcto") {
+        setEsExitoso(true);
+        setMensaje("¡Inicio de sesión correcto! Redirigiendo...");
 
-      setMensaje("Login exitoso: " + res.data);
+        localStorage.setItem("usuarioCorreo", form.correo);
+        
+        const nombreExtraido = form.correo.split('@')[0].toUpperCase();
+        localStorage.setItem("usuarioNombre", nombreExtraido);
+
+        localStorage.setItem("usuarioId", 1);
+
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } else {
+        setEsExitoso(false);
+        setMensaje("Respuesta inesperada del servidor");
+      }
+
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
+      setEsExitoso(false);
       setMensaje("Usuario o contraseña incorrectos");
     }
   };
 
   return (
     <>
-      {/* Formulario Login */}
       <div className="container d-flex justify-content-center align-items-center vh-100">
         <div className="card shadow p-4 formulario-login" style={{ maxWidth: "400px", width: "100%" }}>
           <h2 className="text-center mb-4">Iniciar Sesión</h2>
@@ -62,7 +84,15 @@ function Login() {
             <a href="#">¿Olvidaste tu contraseña?</a><br />
             <a href="/crear-cuenta">Crear cuenta nueva</a>
           </div>
-          <div className="text-center mt-3 text-danger">{mensaje}</div>
+
+          {mensaje && (
+            <div 
+              className={`text-center mt-3 alert ${esExitoso ? 'alert-success text-success' : 'alert-danger text-danger'}`} 
+              style={{ fontWeight: '500', padding: '8px', borderRadius: '6px' }}
+            >
+              {mensaje}
+            </div>
+          )}
         </div>
       </div>
     </>

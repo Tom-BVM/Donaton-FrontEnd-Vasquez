@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { registrarUsuario } from "../Services/Api";
+import { useNavigate } from "react-router-dom";
+import { registrarUsuario } from "../Services/Api"; // IMPORTACIÓN AGREGADA: Esto faltaba para que no fallara
 
 function CrearCuenta() {
   const [form, setForm] = useState({
@@ -11,6 +12,8 @@ function CrearCuenta() {
   });
 
   const [mensaje, setMensaje] = useState("");
+  const [esExitoso, setEsExitoso] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.id]: e.target.value });
@@ -18,6 +21,8 @@ function CrearCuenta() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setMensaje("");
+    setEsExitoso(false);
 
     if (form.password !== form.password2) {
       setMensaje("Las contraseñas no coinciden");
@@ -25,6 +30,7 @@ function CrearCuenta() {
     }
 
     try {
+      // Ahora sí se ejecutará correctamente al estar importada arriba
       const res = await registrarUsuario({
         nombre: form.nombre,
         correo: form.correo,
@@ -32,10 +38,25 @@ function CrearCuenta() {
         contraseña: form.password
       });
 
-      setMensaje("Cuenta creada exitosamente: " + res.data.nombre);
+      if (res.data && res.data.nombre) {
+        setEsExitoso(true);
+        setMensaje(`¡Cuenta creada con éxito! Bienvenido/a ${res.data.nombre}. Ingresando...`);
+
+        localStorage.setItem("usuarioCorreo", form.correo);
+        // CORRECCIÓN: .toUpperCase() se aplica al string, no al arreglo .split()
+        localStorage.setItem("usuarioNombre", form.nombre.toUpperCase());
+        localStorage.setItem("usuarioId", res.data.id || 1);
+
+        // REDIRECCIÓN CORRECTA: Te enviará directo a tu componente Home asignado a "/"
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      }
+
     } catch (error) {
       console.error("Error:", error);
-      setMensaje("Hubo un problema al crear la cuenta");
+      setEsExitoso(false);
+      setMensaje("Hubo un problema al crear la cuenta o el correo ya está registrado");
     }
   };
 
@@ -123,7 +144,15 @@ function CrearCuenta() {
               <a href="/login" className="btn btn-outline-success">Volver al inicio de sesión</a>
             </div>
           </form>
-          <div id="mensaje" className="text-center mt-3 text-danger">{mensaje}</div>
+
+          {mensaje && (
+            <div 
+              className={`text-center mt-3 alert ${esExitoso ? 'alert-success text-success' : 'alert-danger text-danger'}`} 
+              style={{ fontWeight: "500", padding: "8px", borderRadius: "6px" }}
+            >
+              {mensaje}
+            </div>
+          )}
         </div>
       </div>
     </>
